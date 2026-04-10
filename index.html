@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/main.css" rel="stylesheet">
+
+    <title>Les entrepreneurs du Cameroun</title>
+</head>
+<body>
+    <div class="container">
+        <h2>forum des entrepreneurs du Cameroun</h2>
+        <p>pour intégrer ce forum, veillez remplir vos Informations </p>
+
+        <input type="text" id="name" placeholder="Votre nom" required/><br>
+        <input type="text" id="phone" placeholder="Votre numéro whatsapp" required/>
+
+
+
+        <button type="button" id="startPayment">Payer maintenant</button>
+
+        <div class="start" id="paymentSection">
+            <h3>Information du compte:</h3>
+            <p><strong>MTN MoMo: </strong>650668918</p>
+            <p>Nom: NGUEMETA KAMTA LEONCE WILFRIED</p>
+            <h3><span>Montant: </span>1000 FCFA</h3>
+
+            <hr>
+            <p id="timerMsg" style="color:gold; background: black; padding: 10px; border-radius: 8px;"></p>
+            <button type="button" id="donePayment">cliquez si vous avez terminé</button>
+
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
