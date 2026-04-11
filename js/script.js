@@ -46,12 +46,12 @@ document.addEventListener("DOMContentLoaded",function(){
     //etape2: redirection whatsapp
 
     doneBtn.addEventListener("click",function(){
-        const number = "650668918";
+        const number = "237650668918";
         const message = encodeURIComponent(
                 "Bonjour, je viens d'éffectuer le paiement pour rejoindre le forum.\nNom:${nom}\nTelephone:${phone}\n Voici ma preuve de paiement."
         );
 
-        const url = `https://wa.me/${650668918}?text=${message}`;
+        const url = `https://wa.me/${237650668918}?text=${message}`;
 
         window.location.href = url;
     });
