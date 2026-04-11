@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded",function(){
         if (timeLet < 0){
             clearInterval(interval);
             doneBtn.disabled = false;
-            doneBtn.textContent ="cliquez si vous avez terminé";
-            timerMsg.textContent = "Vous pouvez maintenant confirmer votre paiement";
+            doneBtn.textContent =`cliquez si vous avez terminé`;
+            timerMsg.textContent = `Vous pouvez maintenant confirmer votre paiement`;
         }
     }, 1500);
 
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded",function(){
     doneBtn.addEventListener("click",function(){
         const number = "237650668918";
         const message = encodeURIComponent(
-                "Bonjour, je viens d'éffectuer le paiement pour rejoindre le forum.\nNom:${nom}\nTelephone:${phone}\n Voici ma preuve de paiement."
+                `Bonjour, je viens d'éffectuer le paiement pour rejoindre le forum.\nNom:${nameInput.value}\nTelephone:${phoneInput.value}.\n Voici ma preuve de paiement.`
         );
 
         const url = `https://wa.me/${237650668918}?text=${message}`;
