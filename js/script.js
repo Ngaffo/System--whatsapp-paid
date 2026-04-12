@@ -1,57 +1,21 @@
 document.addEventListener("DOMContentLoaded",function(){
 
-    const startBtn = document.getElementById("startPayment");
-    const doneBtn = document.getElementById("donePayment");
-    const paymentSection = document.getElementById("paymentSection");
-
-    // etpae1: afficher les instructions de paiement
-
+    const contactBtn = document.getElementById("contactBtn");
     const nameInput = document.getElementById("name");
-    const phoneInput = document.getElementById("phone");
 
-    startBtn.addEventListener("click",function(){
-        if (!nameInput.value || !phoneInput.value){
-            alert("veuillez remplir vos informations.");
+    contactBtn.addEventListener("click",function(){
+        if (!nameInput.value){
+            alert("veuillez rentrer votre nom.");
             return;
         }
-        paymentSection.style.display = "block";
-        startBtn.style.display = "none";
 
-         //scroll smooth
-        paymentSection.scrollIntoView({behavior:"smooth"});
-    });
-
+    const number = "237652413361";
+    const message = encodeURIComponent(
+         `Salut, je m'appelle ${nameInput.value}. Je suis intéressé par le système pour rendre mon groupe Whatsapp payant. Pouvez-vous me montrer une démo?`
+    );
    
 
-    //bloquer le bouton pendant 15s seconde
-    let timeLet = 15;
-    doneBtn.disabled = true;
-    const timerMsg = document.getElementById("timerMsg");
-
-    
-
-    const interval = setInterval(()=>{
-        timerMsg.textContent = `veillez effectuer le paiement...(${timeLet}s)`;
-        doneBtn.textContent = `Attendez ${timeLet}s...`;
-        timeLet--;
-
-        if (timeLet < 0){
-            clearInterval(interval);
-            doneBtn.disabled = false;
-            doneBtn.textContent =`cliquez si vous avez terminé`;
-            timerMsg.textContent = `Vous pouvez maintenant confirmer votre paiement`;
-        }
-    }, 1500);
-
-    //etape2: redirection whatsapp
-
-    doneBtn.addEventListener("click",function(){
-        const number = "237650668918";
-        const message = encodeURIComponent(
-                `Bonjour, je viens d'éffectuer le paiement pour rejoindre le forum.\nNom:${nameInput.value}\nTelephone:${phoneInput.value}.\n Voici ma preuve de paiement.`
-        );
-
-        const url = `https://wa.me/${237650668918}?text=${message}`;
+    const url = `https://wa.me/${number}?text=${message}`;
 
         window.location.href = url;
     });
