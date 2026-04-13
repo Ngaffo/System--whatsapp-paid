@@ -1,23 +1,60 @@
 document.addEventListener("DOMContentLoaded",function(){
 
-    const contactBtn = document.getElementById("contactBtn");
-    const nameInput = document.getElementById("name");
+    const startBtn = document.getElementById("startPayment");
+    const doneBtn = document.getElementById("donePayment");
+    const paymentSection = document.getElementById("paymentSection");
+    const timerMsg = document.getElementById("timerMsg");
 
-    contactBtn.addEventListener("click",function(){
-        if (!nameInput.value){
-            alert("veuillez rentrer votre nom.");
+
+    const nameInput = document.getElementById("name");
+    const phoneInput = document.getElementById("phone");
+
+    startBtn.addEventListener("click",function(){
+        if (!nameInput.value || !phoneInput.value){
+            alert("veuillez rentrer vos informations.");
             return;
         }
 
-    const number = "237652413361";
-    const message = encodeURIComponent(
-         `Salut, je m'appelle ${nameInput.value}. Je suis intéressé par le système pour rendre mon groupe Whatsapp payant. Pouvez-vous me montrer une démo?`
-    );
-   
+        paymentSection.style.display = "block";
+        startBtn.style.display = "none";
+        doneBtn.style.display="block";
 
-    const url = `https://wa.me/${number}?text=${message}`;
+        paymentSection.scrollIntoView({behavior:"smooth"})
 
-        window.location.href = url;
+        //compteur 10s
+        let timeLet = 10;
+        doneBtn.disabled = true;
+
+        const interval =setInterval(()=>{
+            timerMsg.textContent = `Effectuez le paiement ...(${timeLet}s)`;
+            doneBtn.textContent = `Attendez ${timeLet}s...`;
+
+            timeLet--;
+
+            if(timeLet < 0){
+                clearInterval(interval);
+                doneBtn.disabled = false;
+                doneBtn.textContent = "Paiement terminé";
+
+                timerMsg.textContent = "Vous pouvez maintenant confirmer votre paiement";
+            }
+        }, 1000);
+
     });
+
+    //redirection whatsapp
+
+    doneBtn.addEventListener("click", function(){
+
+        const number = "237650668918";
+        const message = encodeURIComponent(
+            `Salut, je viens de faire un paiement. \nNom:${nameInput.value}\n Téléphone: ${phoneInput.value}\n Je vous envoie la preuve.`
+        );
+    
+
+        const url = `https://wa.me/${number}?text=${message}`;
+
+            window.location.href = url;
+        });
 
 });

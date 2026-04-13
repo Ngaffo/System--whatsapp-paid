@@ -10,37 +10,29 @@ body{
 
 .container{
     background: #1a1a1a;
-    padding: 25px;
+    padding: 30px;
     border-radius: 12px;
-    max-width: 650px;
+    width: 80%;
+    max-width: 400px;
     margin: auto;
     text-align: justify;
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
     border: 1px solid #d4af37;
 }
-h1,h2,h3{
+h1{
     color: gold;
 }
 
-.subtitle{
-    color: #ccc;
-}
-ul
-p{
-    color: #ddd;
-}
 
 input{
-   width: 95%;
+   width: 92%;
    padding: 15px;
    margin: 8px 0;
    border-radius: 6px;
    border: none;
    outline: none;
 }
-.cta-text{
-    margin-top: 20px;
-}
+
 button{
     background: linear-gradient(45deg, #d4af37, #ffd700);
     color: black;
@@ -58,12 +50,21 @@ button:hover{
     transform: scale(1.05);
     box-shadow: 0 0 10px gold;
 }
-
 .start{
-   
     display: none;
-    margin-top: 20px;
+    
 }
+span{
+    color: gold;
+    font-size: 20px;
+}
+
+#timeMsg{
+    color: gold;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 h3{
     color: gold;
 }

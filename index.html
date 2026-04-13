@@ -5,42 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style/main.css" rel="stylesheet">
 
-    <title>Monétisez votre groupe whatsApp</title>
+    <title>Les Entrepreneurs</title>
 </head>
 <body>
     <div class="container">
-        <h2>💰Transformez Votre groupe whatsapp en source de revenus</h2>
-        <p class="subtitle">Arrêtez de gérer des groupes gratuits avec des membres non sérieux❌</p>
+        <h2>Forum des entrepreneurs du les-entrepreneurs-du-cameroun</h2>
+        <p>Rejoignez notre forum exclusif après paiement sécurisé.</p>
 
-        <hr>
+        <input type="text" id="name" placeholder="votre nom">
+        <input type="text" id="phone" placeholder="votre numéro whatsApp">
 
-        <h3>🚨Le problème</h3>
-        <p>Beaucoup de personnes rejoignent les groupes whatsApp sans engagement. Résultat:perte de temps et aucune rentabilité.</p>
+        <button type="button" id="startPayment">Payer maintenant</button>
 
-        <h3>✅La solution</h3>
-        <p>Je vous crée un système simple qui oblige les membres à payer avant d'accéder à votre groupe.</p>
+        <div class="start" id="paymentSection">
+            <h3>Information du compte:</h3>
+            <p><strong>MTN Momo: </strong>650668918</p>
+            <P>Nom: NGUEMETA KAMTA LEONCE WILFRIED</P>
+            <P >Montant: <span>1000FCFA</span></P>
 
+            <hr>
 
-        <ul>
-            <ol>✔️Paiement avant accès(MTN/Orange)</ol>
-            <ol>✔️Contrôle total des membres</ol>
-            <ol>✔️Design professionnel</ol>
-            <ol>✔️Installation rapide</ol>
-        </ul>
+            
+            <p id="timerMsg" style="color: gold; background: black; padding: 10px; border-radius: 6px;"></p>
 
-        <h3>📸 Démo</h3>
-        <p>Voici un exemple de système que je peux créer pour vous:</p>
-        <a href=""  target="_blank">Voir la démo🔗</a>
-
-        <hr>
-        <h2 class="cta-text">🔥Intéressé?</h2>
-        <p>Contactez-moi directement sur whatsApp pour une démonstration</p>
-
-        <input type="text" id="name" placeholder="Votre nom">
-
-        <button type="button" id="contactBtn">Demander une démo</button>
-
+            <button id="donePayment">Cliquez ici si vous avez terminé</button>
        
+        </div>
+        
     </div>
 
     <script src="js/script.js"></script>
